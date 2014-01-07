@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>TypeToSearch Demo</title>
+        <link href='http://fonts.googleapis.com/css?family=Londrina+Shadow' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="style.css" />
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script src="jquery.typetosearch.min.js" type="text/javascript"></script>
+        
+        <script>
+            var demo = (function(){
+                return {
+                    init: function(){
+                        $('.search-overlay').typeToSearch({
+                            searchUrl : '/search/<%term%>' 
+                        });
+                    }
+                };
+            })();
+            $(document).ready(function(){
+                demo.init();
+            });
+        </script>
+    </head>
+    <body>
+        <div class="demo">
+            <h1>TypeToSearch Demo</h1>
+            <div class="instructions">
+                <p>Start typing -- a search form will magically appear.</p>
+                <p>Press enter when you're done.</p>
+            </div>
+        </div>
+        
+        <div class="search-overlay">
+            <div class="search-title">Search</div>
+            <div class="search-instructions">Press Enter To Search</div>
+            <div class="close-search">Close</div>
+            <div class="search-form">
+                <form method="get"><input type="text" name="search" class="overlay-search-term" /></form>
+            </div>
+        </div>
+        
+    </body>
+</html>
+    
